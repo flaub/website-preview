@@ -4,8 +4,8 @@
   <ShortName>RISC Zero Developer Docs</ShortName>
   <Description>Search RISC Zero Developer Docs</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://dev.risczero.com/img/logo.png</Image>
-  <Url type="text/html" method="get" template="https://dev.risczero.com/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://dev.risczero.com/opensearch.xml" />
-  <moz:SearchForm>https://dev.risczero.com/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://dev.risczero.com/website-preview/risc0/risc0/pr/978/img/logo.png</Image>
+  <Url type="text/html" method="get" template="https://dev.risczero.com/website-preview/risc0/risc0/pr/978/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://dev.risczero.com/website-preview/risc0/risc0/pr/978/opensearch.xml" />
+  <moz:SearchForm>https://dev.risczero.com/website-preview/risc0/risc0/pr/978/</moz:SearchForm>
 </OpenSearchDescription>
