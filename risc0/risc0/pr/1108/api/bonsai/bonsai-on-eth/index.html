@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous">
 <script src="https://plausible.io/js/script.js" data-domain="risczero.com" defer="defer"></script><link rel="stylesheet" href="/website-preview/risc0/risc0/pr/1108/assets/css/styles.5537c1c2.css">
-<script src="/website-preview/risc0/risc0/pr/1108/assets/js/runtime~main.1c415c80.js" defer="defer"></script>
+<script src="/website-preview/risc0/risc0/pr/1108/assets/js/runtime~main.b651aca4.js" defer="defer"></script>
 <script src="/website-preview/risc0/risc0/pr/1108/assets/js/main.eec54901.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -37,7 +37,7 @@
 <ol>
 <li>Deploy the <code>Bonsai Relay Contract</code> to Ethereum using address <code>0xB..</code>.</li>
 <li>Launch the <code>Bonsai Relayer</code>, setting <code>--contract-address</code> to <code>0xB..</code>.</li>
-<li>To delegate off-chain computation for Smart Contract <code>A</code> to Bonsai, register its <code>Image</code> or <code>ELF</code> (the binary executing the computation on RISC Zero ZKVM) with Bonsai.</li>
+<li>To delegate off-chain computation for a new Smart Contract <code>A</code> to Bonsai, register its <code>Image</code> or <code>ELF</code> (the binary executing the computation on RISC Zero ZKVM) with Bonsai.</li>
 <li>Use the generated <code>Image ID</code> and the <code>Bonsai Relay Contract</code> address 0xB.. to deploy Smart Contract <code>A</code> on Ethereum.</li>
 <li>Initiate a <code>Callback request</code> through the <code>Bonsai Relayer</code>&#x27;s off-chain REST API. This request is sent to Bonsai.</li>
 <li>After Bonsai produces an execution proof, the <code>Bonsai Relayer</code> relays the proof and computation result to the <code>Bonsai Relay Contract</code>.</li>
