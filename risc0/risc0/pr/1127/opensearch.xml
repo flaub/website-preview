@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>RISC Zero Developer Docs</ShortName>
+  <Description>Search RISC Zero Developer Docs</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Image width="16" height="16" type="image/x-icon">https://dev.risczero.com/website-preview/risc0/risc0/pr/1127/img/logo.png</Image>
+  <Url type="text/html" method="get" template="https://dev.risczero.com/website-preview/risc0/risc0/pr/1127/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://dev.risczero.com/website-preview/risc0/risc0/pr/1127/opensearch.xml" />
+  <moz:SearchForm>https://dev.risczero.com/website-preview/risc0/risc0/pr/1127/</moz:SearchForm>
+</OpenSearchDescription>
