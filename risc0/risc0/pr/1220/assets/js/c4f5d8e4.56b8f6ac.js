@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocusaurus=self.webpackChunkdocusaurus||[]).push([[4195],{2841:(s,u,a)=>{a.r(u),a.d(u,{default:()=>t});a(7294);var c=a(6550),e=a(4996),r=a(5893);const t=()=>{const s=(0,e.Z)("/api");return(0,r.jsx)(c.l_,{to:s})}}}]);
