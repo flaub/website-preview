@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous">
 <script src="https://plausible.io/js/script.js" data-domain="risczero.com" defer="defer"></script><link rel="stylesheet" href="/website-preview/risc0/risc0/pr/1217/assets/css/styles.5537c1c2.css">
-<script src="/website-preview/risc0/risc0/pr/1217/assets/js/runtime~main.fb731bfe.js" defer="defer"></script>
+<script src="/website-preview/risc0/risc0/pr/1217/assets/js/runtime~main.5c341b5f.js" defer="defer"></script>
 <script src="/website-preview/risc0/risc0/pr/1217/assets/js/main.e2698da6.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -22,14 +22,14 @@
 <li>Using the Bonsai proving service and the <a href="#verifier-contract">verifier contract</a> directly.</li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="bonsai-relay">Bonsai Relay<a href="#bonsai-relay" class="hash-link" aria-label="Direct link to Bonsai Relay" title="Direct link to Bonsai Relay">​</a></h2>
-<p>The Bonsai Relay is a service makes it simpler to integrate RISC Zero into your applications, leveraging the <a href="https://twitter.com/RiscZero/status/1677316664772132864" target="_blank" rel="noopener noreferrer">zk coprocessor</a> model.</p>
+<p>The Bonsai Relay is a service that simplifies the integration of RISC Zero into your applications, leveraging the <a href="https://twitter.com/RiscZero/status/1677316664772132864" target="_blank" rel="noopener noreferrer">zk coprocessor</a> model.</p>
 <p>At a high level, here&#x27;s how it works:</p>
 <p><img loading="lazy" alt="Bonsai ETH Relay overview" src="/website-preview/risc0/risc0/pr/1217/assets/images/bonsai_ethereum-76e1795a2f79cbc67ff530d289aa1856.png" width="4156" height="2492" class="img_ev3q"></p>
 <ol>
 <li>Your application sends a request to run your zkVM guest to the Bonsai Relay. You can either:<!-- -->
 <ul>
-<li>Send your request on-chain, by calling <code>requestCallback</code> on the <a href="https://github.com/risc0/risc0/blob/main/bonsai/ethereum/contracts/BonsaiRelay.sol" target="_blank" rel="noopener noreferrer"><code>BonsaiRelay</code> contract</a>.</li>
-<li>Send your request off-chain, by sending a request to the Bonsai Relay REST API.</li>
+<li>Send your request <a href="#on-chain-requests">on-chain</a>, by calling <code>requestCallback</code> on the <a href="https://github.com/risc0/risc0/blob/main/bonsai/ethereum/contracts/BonsaiRelay.sol" target="_blank" rel="noopener noreferrer"><code>BonsaiRelay</code> contract</a>.</li>
+<li>Send your request <a href="#off-chain-requests">off-chain</a>, by sending a request to the Bonsai Relay REST API.</li>
 </ul>
 </li>
 <li>The Bonsai Relay sends the proof request to the Bonsai proving service.</li>
@@ -52,14 +52,14 @@ This involves running a service binary provided by RISC Zero, and deploying the 
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="off-chain-requests">Off-chain Requests<a href="#off-chain-requests" class="hash-link" aria-label="Direct link to Off-chain Requests" title="Direct link to Off-chain Requests">​</a></h3>
 <p>The Bonsai Relay accepts requests off-chain using its <a href="https://en.wikipedia.org/wiki/REST" target="_blank" rel="noopener noreferrer">REST</a> API.</p>
 <p>Using the off-chain API allows for including data not available to smart contracts in the EVM, and avoids needing to pay transaction fees on Ethereum to initiate a request.
-When inputs to your <a href="/website-preview/risc0/risc0/pr/1217/terminology#guest-program">guest program</a> and large (e.g. more than a few kilobytes) sending requests on-chain can be cost-prohibitive, while sending large inputs (e.g. up to tens of megabytes) via the REST API has no additional cost.</p>
+When inputs to your <a href="/website-preview/risc0/risc0/pr/1217/terminology#guest-program">guest program</a> are large (e.g. more than a few kilobytes) sending requests on-chain can be cost-prohibitive, while sending large inputs (e.g. up to tens of megabytes) via the REST API has no additional cost.</p>
 <p>The <a href="https://docs.rs/crate/bonsai-ethereum-relay/latest" target="_blank" rel="noopener noreferrer">Bonsai Relay SDK</a> provides a Rust interface for interacting with the Bonsai Relay.
 An example for sending a callback request via the REST API can be found in the <a href="https://github.com/risc0/bonsai-foundry-template/blob/main/relay/examples/offchain_request.rs" target="_blank" rel="noopener noreferrer">relay directory of the Bonsai Foundry Template</a>.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="on-chain-requests">On-chain Requests<a href="#on-chain-requests" class="hash-link" aria-label="Direct link to On-chain Requests" title="Direct link to On-chain Requests">​</a></h3>
 <p>The Bonsai Relay also accepts requests on-chain using the <a href="https://github.com/risc0/risc0/blob/main/bonsai/ethereum/contracts/BonsaiRelay.sol" target="_blank" rel="noopener noreferrer"><code>BonsaiRelay</code> contract</a>.</p>
 <p>On-chain requests can be useful for reducing the amount of code you need to maintain.
 When submitting requests off-chain, some client or indexer needs to be written to assemble the inputs and make the request to the Bonsai Relay.
-With on-chain requests, the application smart contract can directly issue requests, and so no client or indexer needs to be written or maintained.</p>
+In contrast, with on-chain requests, the application&#x27;s smart contract can directly issue these requests, eliminating the need to write or maintain any client or indexer.</p>
 <p>An example of sending a request on-chain can be found in the <a href="https://github.com/risc0/bonsai-foundry-template/blob/main/contracts/BonsaiStarter.sol#L60-L68" target="_blank" rel="noopener noreferrer">starter contract of the Bonsai Foundry Template</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="verifier-contract">Verifier Contract<a href="#verifier-contract" class="hash-link" aria-label="Direct link to Verifier Contract" title="Direct link to Verifier Contract">​</a></h2>
 <p>RISC Zero supports an on-chain verifier for <a href="https://www.risczero.com/news/on-chain-verification" target="_blank" rel="noopener noreferrer">Groth16 SNARK</a> proofs generated by the Bonsai proving service.
