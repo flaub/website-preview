@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous">
 <script src="https://plausible.io/js/script.js" data-domain="risczero.com" defer="defer"></script><link rel="stylesheet" href="/website-preview/risc0/risc0/pr/1395/assets/css/styles.5537c1c2.css">
-<script src="/website-preview/risc0/risc0/pr/1395/assets/js/runtime~main.1feb10e8.js" defer="defer"></script>
+<script src="/website-preview/risc0/risc0/pr/1395/assets/js/runtime~main.b6f4fa11.js" defer="defer"></script>
 <script src="/website-preview/risc0/risc0/pr/1395/assets/js/main.6781e12f.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -26,7 +26,7 @@ Quick Start</a>.</li>
 the <a href="/website-preview/risc0/risc0/pr/1395/terminology#guest">guest</a> receives two inputs from the <a href="/website-preview/risc0/risc0/pr/1395/terminology#host">host</a> and commits their product to
 the <a href="/website-preview/risc0/risc0/pr/1395/terminology#journal">journal</a>.</li>
 </ul>
-<p>The full functionality of the guest is documented in the <a href="https://docs.rs/risc0-zkvm/*/risc0_zkvm/guest" target="_blank" rel="noopener noreferrer"><code>guest</code>
+<p>The full functionality of the guest is documented in the <a href="https://docs.rs/risc0-zkvm/0.20/risc0_zkvm/guest" target="_blank" rel="noopener noreferrer"><code>guest</code>
 module</a> of the <a href="https://docs.rs/risc0-zkvm" target="_blank" rel="noopener noreferrer"><code>risc0-zkvm</code> Rust crate</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="basic-guest-functionality-reading-writing-and-committing">Basic Guest Functionality: Reading, Writing, and Committing<a href="#basic-guest-functionality-reading-writing-and-committing" class="hash-link" aria-label="Direct link to Basic Guest Functionality: Reading, Writing, and Committing" title="Direct link to Basic Guest Functionality: Reading, Writing, and Committing">​</a></h2>
 <p>To build a zkVM application, we need our guest program to be able to:</p>
@@ -37,20 +37,20 @@ module</a> of the <a href="https://docs.rs/risc0-zkvm" target="_blank" rel="noop
 </ol>
 <p>To support various use cases, there are a number of functions that can be called
 from the guest for reading/writing/committing. For a complete list, see the
-<a href="https://docs.rs/risc0-zkvm/*/risc0_zkvm/guest" target="_blank" rel="noopener noreferrer"><code>guest</code> module</a> documentation; we include a brief list which
+<a href="https://docs.rs/risc0-zkvm/0.20/risc0_zkvm/guest" target="_blank" rel="noopener noreferrer"><code>guest</code> module</a> documentation; we include a brief list which
 should be sufficient for building your first application:</p>
 <ul>
 <li>
 <p><strong>Reading inputs</strong> <br>
-<a href="https://docs.rs/risc0-zkvm/*/risc0_zkvm/guest/env/fn.read.html" target="_blank" rel="noopener noreferrer"><code>env::read</code></a>, <a href="https://docs.rs/risc0-zkvm/*/risc0_zkvm/guest/env/fn.read_slice.html" target="_blank" rel="noopener noreferrer"><code>env::read_slice</code></a>, and <a href="https://docs.rs/risc0-zkvm/*/risc0_zkvm/guest/env/fn.stdin.html" target="_blank" rel="noopener noreferrer"><code>env::stdin</code></a></p>
+<a href="https://docs.rs/risc0-zkvm/0.20/risc0_zkvm/guest/env/fn.read.html" target="_blank" rel="noopener noreferrer"><code>env::read</code></a>, <a href="https://docs.rs/risc0-zkvm/0.20/risc0_zkvm/guest/env/fn.read_slice.html" target="_blank" rel="noopener noreferrer"><code>env::read_slice</code></a>, and <a href="https://docs.rs/risc0-zkvm/0.20/risc0_zkvm/guest/env/fn.stdin.html" target="_blank" rel="noopener noreferrer"><code>env::stdin</code></a></p>
 </li>
 <li>
 <p><strong>Writing private outputs to <a href="/website-preview/risc0/risc0/pr/1395/terminology#host">host</a></strong><br>
-<a href="https://docs.rs/risc0-zkvm/*/risc0_zkvm/guest/env/fn.write.html" target="_blank" rel="noopener noreferrer"><code>env::write</code></a>, <a href="https://docs.rs/risc0-zkvm/*/risc0_zkvm/guest/env/fn.write_slice.html" target="_blank" rel="noopener noreferrer"><code>env::write_slice</code></a>, <a href="https://docs.rs/risc0-zkvm/*/risc0_zkvm/guest/env/fn.stdout.html" target="_blank" rel="noopener noreferrer"><code>env::stdout</code></a>, <a href="https://docs.rs/risc0-zkvm/*/risc0_zkvm/guest/env/fn.stderr.html" target="_blank" rel="noopener noreferrer"><code>env::stderr</code></a></p>
+<a href="https://docs.rs/risc0-zkvm/0.20/risc0_zkvm/guest/env/fn.write.html" target="_blank" rel="noopener noreferrer"><code>env::write</code></a>, <a href="https://docs.rs/risc0-zkvm/0.20/risc0_zkvm/guest/env/fn.write_slice.html" target="_blank" rel="noopener noreferrer"><code>env::write_slice</code></a>, <a href="https://docs.rs/risc0-zkvm/0.20/risc0_zkvm/guest/env/fn.stdout.html" target="_blank" rel="noopener noreferrer"><code>env::stdout</code></a>, <a href="https://docs.rs/risc0-zkvm/0.20/risc0_zkvm/guest/env/fn.stderr.html" target="_blank" rel="noopener noreferrer"><code>env::stderr</code></a></p>
 </li>
 <li>
 <p><strong>Committing public outputs to <a href="/website-preview/risc0/risc0/pr/1395/terminology#journal">journal</a></strong><br>
-<a href="https://docs.rs/risc0-zkvm/*/risc0_zkvm/guest/env/fn.commit.html" target="_blank" rel="noopener noreferrer"><code>env::commit</code></a>, <a href="https://docs.rs/risc0-zkvm/*/risc0_zkvm/guest/env/fn.commit_slice.html" target="_blank" rel="noopener noreferrer"><code>env::commit_slice</code></a></p>
+<a href="https://docs.rs/risc0-zkvm/0.20/risc0_zkvm/guest/env/fn.commit.html" target="_blank" rel="noopener noreferrer"><code>env::commit</code></a>, <a href="https://docs.rs/risc0-zkvm/0.20/risc0_zkvm/guest/env/fn.commit_slice.html" target="_blank" rel="noopener noreferrer"><code>env::commit_slice</code></a></p>
 </li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="tools-for-debugging--optimization">Tools for Debugging &amp; Optimization<a href="#tools-for-debugging--optimization" class="hash-link" aria-label="Direct link to Tools for Debugging &amp; Optimization" title="Direct link to Tools for Debugging &amp; Optimization">​</a></h2>
@@ -60,11 +60,11 @@ list, but include some highlights here:</p>
 <ul>
 <li>
 <p><strong>Count Cycles</strong> <br>
-<a href="https://docs.rs/risc0-zkvm/*/risc0_zkvm/guest/env/fn.cycle_count.html" target="_blank" rel="noopener noreferrer"><code>env::cycle_count</code></a></p>
+<a href="https://docs.rs/risc0-zkvm/0.20/risc0_zkvm/guest/env/fn.cycle_count.html" target="_blank" rel="noopener noreferrer"><code>env::cycle_count</code></a></p>
 </li>
 <li>
 <p><strong>Print a debug message</strong><br>
-<a href="https://docs.rs/risc0-zkvm/*/risc0_zkvm/guest/env/fn.log.html" target="_blank" rel="noopener noreferrer"><code>env::log</code></a></p>
+<a href="https://docs.rs/risc0-zkvm/0.20/risc0_zkvm/guest/env/fn.log.html" target="_blank" rel="noopener noreferrer"><code>env::log</code></a></p>
 </li>
 </ul>
 <p>For more information on optimization &amp; performance, see our pages on

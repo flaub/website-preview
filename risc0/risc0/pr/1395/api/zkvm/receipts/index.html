@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous">
 <script src="https://plausible.io/js/script.js" data-domain="risczero.com" defer="defer"></script><link rel="stylesheet" href="/website-preview/risc0/risc0/pr/1395/assets/css/styles.5537c1c2.css">
-<script src="/website-preview/risc0/risc0/pr/1395/assets/js/runtime~main.1feb10e8.js" defer="defer"></script>
+<script src="/website-preview/risc0/risc0/pr/1395/assets/js/runtime~main.b6f4fa11.js" defer="defer"></script>
 <script src="/website-preview/risc0/risc0/pr/1395/assets/js/main.6781e12f.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -47,11 +47,11 @@ ID</a>.</li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="extracting-the-journal">Extracting the Journal<a href="#extracting-the-journal" class="hash-link" aria-label="Direct link to Extracting the Journal" title="Direct link to Extracting the Journal">​</a></h2>
 <p>The <a href="/website-preview/risc0/risc0/pr/1395/terminology#journal">journal</a> contains the public outputs of the computation. Users can extract
-the journal from a receipt using <a href="https://docs.rs/risc0-zkvm/*/risc0_zkvm/struct.Receipt.html#structfield.journal" target="_blank" rel="noopener noreferrer">receipt.journal</a>.</p>
+the journal from a receipt using <a href="https://docs.rs/risc0-zkvm/0.20/risc0_zkvm/struct.Receipt.html#structfield.journal" target="_blank" rel="noopener noreferrer">receipt.journal</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="verifying-a-receipt">Verifying a Receipt<a href="#verifying-a-receipt" class="hash-link" aria-label="Direct link to Verifying a Receipt" title="Direct link to Verifying a Receipt">​</a></h2>
 <p><a href="/website-preview/risc0/risc0/pr/1395/terminology#verify">Verifying</a> the receipt provides cryptographic assurance that the <a href="/website-preview/risc0/risc0/pr/1395/terminology#journal">journal</a> was
 created honestly using the <a href="/website-preview/risc0/risc0/pr/1395/terminology#guest-program">guest program</a> with the expected <a href="/website-preview/risc0/risc0/pr/1395/terminology#image-id">Image ID</a>. Users
-can verify the receipt using <a href="https://docs.rs/risc0-zkvm/*/risc0_zkvm/struct.Receipt.html#method.verify" target="_blank" rel="noopener noreferrer">receipt.verify()</a>.</p>
+can verify the receipt using <a href="https://docs.rs/risc0-zkvm/0.20/risc0_zkvm/struct.Receipt.html#method.verify" target="_blank" rel="noopener noreferrer">receipt.verify()</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="serializing-and-deserializing-receipts">Serializing and Deserializing Receipts<a href="#serializing-and-deserializing-receipts" class="hash-link" aria-label="Direct link to Serializing and Deserializing Receipts" title="Direct link to Serializing and Deserializing Receipts">​</a></h2>
 <p>For serializing and deserializing, you can use <a href="https://crates.io/crates/serde" target="_blank" rel="noopener noreferrer">serde</a> which supports many
 encoding formats. There isn&#x27;t a one-size-fits-all solution here, but one option
